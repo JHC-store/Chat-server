@@ -1,5 +1,5 @@
-#ifndef OFFLINEMESSAGEMODEL_H
-#define OFFLINEMESSAGEMODEL_H
+#ifndef OFFLINE_MESSAGE_MODEL_H
+#define OFFLINE_MESSAGE_MODEL_H
 
 #include <string>
 #include <vector>
@@ -10,13 +10,13 @@ class OfflineMsgModel
 {
 public:
     // 存储用户的离线消息
-    void insert(int userid, string msg);
+    void insert(int userId, std::string msg);
 
     // 删除用户的离线消息
-    void remove(int userid);
+    void remove(int userId);
 
     // 查询用户的离线消息
-    vector<string> query(int userid);
+    std::vector<std::string> query(int userId);
 };
 
-#endif
+#endif // OFFLINE_MESSAGE_MODEL_H

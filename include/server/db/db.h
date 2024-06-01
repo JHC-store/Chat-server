@@ -1,6 +1,7 @@
 #ifndef DB_H
 #define DB_H
 
+// TODO:封装太简单，可以增加MySQL连接池
 #include <mysql/mysql.h>
 #include <string>
 using namespace std;
@@ -21,6 +22,7 @@ public:
     MYSQL_RES *query(string sql);
     // 获取连接
     MYSQL* getConnection();
+
 private:
     MYSQL *_conn;
 };

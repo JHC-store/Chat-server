@@ -13,8 +13,7 @@ include_directories(${PROJECT_SOURCE_DIR}/include/server)
 include_directories(${PROJECT_SOURCE_DIR}/include/server/db)
 include_directories(${PROJECT_SOURCE_DIR}/include/server/model)
 include_directories(${PROJECT_SOURCE_DIR}/include/server/redis)
-include_directories(${PROJECT_SOURCE_DIR}/thirdparty)
-link_directories(/usr/lib64/mysql)
+include_directories(${PROJECT_SOURCE_DIR}/thidrparty)
 
 # 加载子目录
 add_subdirectory(src)

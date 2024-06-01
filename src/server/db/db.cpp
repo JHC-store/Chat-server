@@ -2,10 +2,10 @@
 #include <muduo/base/Logging.h>
 
 // 数据库配置信息
-static string server = "127.0.0.1";
-static string user = "root";
-static string password = "123456";
-static string dbname = "chat";
+static const string server = "127.0.0.1";
+static const string user = "root";
+static const string password = "200166_Shangjkld";
+static const string dbname = "chat";
 
 // 初始化数据库连接
 MySQL::MySQL()
@@ -16,8 +16,9 @@ MySQL::MySQL()
 // 释放数据库连接资源
 MySQL::~MySQL()
 {
-    if (_conn != nullptr)
+    if (_conn != nullptr) {
         mysql_close(_conn);
+    }
 }
 
 // 连接数据库
@@ -29,11 +30,10 @@ bool MySQL::connect()
     {
         // C和C++代码默认的编码字符是ASCII，如果不设置，从MySQL上拉下来的中文显示？
         mysql_query(_conn, "set names gbk");
-        LOG_INFO << "connect mysql success!";
     }
     else
     {
-        LOG_INFO << "connect mysql fail!";
+        LOG_INFO << "connect mysql failed!";
     }
 
     return p;

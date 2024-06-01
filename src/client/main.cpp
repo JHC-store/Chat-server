@@ -151,7 +151,7 @@ int main(int argc, char **argv)
             cin.getline(pwd, 50);
 
             json js;
-            js["msgid"] = REG_MSG;
+            js["msgid"] = REGISTER_MSG;
             js["name"] = name;
             js["password"] = pwd;
             string request = js.dump();
@@ -320,7 +320,7 @@ void readTaskHandler(int clientfd)
             continue;
         }
 
-        if (REG_MSG_ACK == msgtype)
+        if (REGISTER_MSG_ACK == msgtype)
         {
             doRegResponse(js);
             sem_post(&rwsem);    // 通知主线程，注册结果处理完成

@@ -1,36 +1,33 @@
-#ifndef GROUP_H
-#define GROUP_H
+#ifndef __GROUP_H__
+#define __GROUP_H__
 
-#include "groupuser.hpp"
 #include <string>
 #include <vector>
-using namespace std;
+#include "group_user.hpp"
 
-// User表的ORM类
 class Group
 {
 public:
-    Group(int id = -1, string name = "", string desc = "")
-    {
-        this->id = id;
-        this->name = name;
-        this->desc = desc;
-    }
+    Group(int id = -1, std::string name = "", std::string desc = "")
+        : _id(id),
+          _desc(desc),
+          _name(name)
+    {}
 
-    void setId(int id) { this->id = id; }
-    void setName(string name) { this->name = name; }
-    void setDesc(string desc) { this->desc = desc; }
+    void setId(int id) { _id = id; }
+    void setName(std::string name) { _name = name; }
+    void setDesc(std::string desc) { _desc = desc; }
 
-    int getId() { return this->id; }
-    string getName() { return this->name; }
-    string getDesc() { return this->desc; }
-    vector<GroupUser> &getUsers() { return this->users; }
+    int getId() { return _id; }
+    std::string getName() { return _name; }
+    std::string getDesc() { return _desc; }
+    std::vector<GroupUser> &getUsers() { return _users; }
 
 private:
-    int id;
-    string name;
-    string desc;
-    vector<GroupUser> users;
+    int _id;
+    std::string _name;
+    std::string _desc;
+    std::vector<GroupUser> _users;
 };
 
-#endif
+#endif // __GROUP_H__

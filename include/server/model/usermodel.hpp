@@ -3,10 +3,10 @@
 
 #include "user.hpp"
 
-// User表的数据操作类
-class UserModel {
+class UserModel
+{
 public:
-    // User表的增加方法
+    // User表的插入方法
     bool insert(User &user);
 
     // 根据用户号码查询用户信息
@@ -19,4 +19,4 @@ public:
     void resetState();
 };
 
-#endif
+#endif // USERMODEL_H
